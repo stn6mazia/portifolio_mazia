@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+	<link href="index.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title>Funções Git</title>
+    <!-- bootstrap - link cdn -->
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home" onclick="printGet()">Get All Issues</a></li>
+                <li><a href="#news" onclick="lockIssue()">Lock Issue</a></li>
+                <li><a href="#contact" onclick="unlockIssue()">Unlock Issue</a></li>
+                <li><a href="#about" onclick="printGet()">Get Issue Number</a></li>
+                <li><input id="selecoes" type="number"/></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <h1 class="texto_git">Aqui você irá usar as Issues do meu GitHub.</h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="box_esquerdo">
+                        <div class="formularios">
+                            <form name="cookieform" id="login" method="post">
+                                <p>Title:</p>
+                                <textarea class="form-control" rows="1" id="title"></textarea>
+                                <p>Coment:</p>
+                                <textarea class="form-control" rows="5" id="body"></textarea>
+                                <p>Which Issue do you want to edit? </p>
+                                <p><input type="number" id="numero">
+
+                                    <select id="estado">
+                                        <option value="open">open</option>
+                                        <option value="closed">closed</option>
+                                    </select>
+                                </p>
+                                <p>
+                                <button id="POST" class="btn bt_formulario" onclick="postarIssue()">POST</button>
+                                <button id="EDIT" class="btn bt_formulario" onclick="editIssue()">EDIT</button>  </p>
+                            </form>
+        			    </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="box_direito">
+                        <div id="prints" class="list-group"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bio">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ordenacao">
+                    <h2 class="nick">Oi, meu nome é Nicolas Mazia</h2>
+
+                    <p style="text-align: center;">Minha vida na área de tecnología se iniciou na Locaweb, como menor aprendiz de Infraestrutura, onde tive bastante conhecimento de hardware
+                    <br> Lá tive a oportunidade de conhecer muitos MITOS da área de desenvolvimento WEB, como também desenvolvimento para servidores. Mas nunca tive o interesse em aprender.
+                    <br> Mas chega aquele momento em nossas vidas que fugimos tanto de alhgo que ele se torna uma das coisas mais incríveis. Então, como era de se esperar, aos 15 anos fiz meu primeiro site
+                    <br> Foi um site bem simples, não conhecia nada de programação, basicamente eu fiz uma tela ver e escrevi.
+                    <br>
+                    <br> <strong>"Olá Mundo"</strong>
+                    <br>
+                    <br> Foi algo incrível, ver como o sistema de navegação WEB fez aquilo parecer uma coisa sencasional, claro, aos 15 anos de idade, em 2012, onde nem tudo era tão atualizado como é hoje
+                    <br> E nesse ano mesmo, eu entrei em contato com um dos meus melhores amigos o Code Academy, eu <strong>DEBULHEI</strong> o site, tudo que eu podia ler, eu lia, mas não li o suficiente
+                    <br>
+                    <br> Em 2013, com 16 anos, eu já achava que era o rei da programação, fazendo sites só em html e css, mas aí me surgiu um monstro, o Java Script.
+                    <br> Era algo tão complexo que eu comecei a querer desistir da programação web só por conta disso, eu me sentia desafiado, e naquela época com tantas cobranças eu não queria o desafio.
+                    <br> em 2014 entrei para a Faculdade de Sistemas de Informação (ainda não me formei, só em dezembro de 2017), eu descobri que existia um amiguinho, o Jquery.
+                    <br> Ter pessoas que me ajudaram a entender melhor o JS e o Jquery me ajudou muito. Sei que ainda sou muito leigo, pois programação é uma área que se aprende a vida toda, e morre burro.
+                    <br> Mas não me importo mais em morrer burro, apenas de dar o melhor de mim, em tudo que faço. Até a ultima gota de suor, eu busco o melhor resultado. 
+                    <br>
+                    <br> <strong>"Mesmo que isso me custe muito Café"</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="secao">
+        <div class="container transparente">
+            <div class="row">
+                <div class="col-sm-6 abaixa">
+                    <div class="texto_sobre">
+                        <h3>HTML</h3>
+                        <p>
+                            Tenho um conhecimento amplo em HTML, 
+                            tenho um conhecimento de 5 anos com a línguagem.
+                        </p>
+                    </div>
+                    <div class="texto_sobre">
+                        <h3>CSS</h3>
+                        <p>
+                            Assim como HTML, o CSS também é uma carga valioza 
+                            no meu conhecimento de Front, onde também tenho um 
+                            amplo conhecimento de 5 anos na línguagem.
+                        </p>
+                    </div>
+                    <div class="texto_sobre">
+                        <h3>Bootstrap</h3>
+                        <p>
+                            Uma das categorias que acho mais simples para 
+                            desenvolver na área de Front é o Bootstrap, pois 
+                            é uma línguagem que se cria por sí só. Tenho um conhecimento de 2 anos.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 abaixa">
+                    <div class="texto_sobre">
+                        <h3>JavaScript</h3>
+                        <p>
+                            Uma das linguagens que tenho boa prática, seja com um JS puro
+                            ou com seus Frameworks, como Angulas2, Ember e ReactJS. Tenho 
+                            facilidade em usar a linguagem para executar serviços com http request com JQuery.
+                        </p>
+                    </div>
+                    <div class="texto_sobre">
+                        <h3>Python</h3>
+                        <p>
+                            Uma das linguagens com a qual nunca trabalhei, mas já tenho conhecimento teorico,
+                            além disso é uma linguagem que pouco conheço frameworks e pouco testei em projetos 
+                            pessoais, apenas estudei e entendi a linguagem.
+                        </p>
+                    </div>
+                    <div class="texto_sobre">
+                        <h3>Google</h3>
+                        <p>
+                            Assim como em nenhuma função que executei na minha vida, o Google é meu melhor amigo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="rodape">
+        <div class="container">
+            <h1 style="text-align: center;">ISSO É TUDO PESSOAL!</h1>
+        </div>
+    </footer>
+
+<!-- jquery - link cdn -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" rel="stylesheet"></script>
+    <script src="bower_components/auth0-lock/build/lock.min.js"></script>
+    <script src="./index.js"></script>
+
+</body>
+</html>
