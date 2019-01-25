@@ -8,3 +8,11 @@
 #header {
     background-color: rgba(98, 0, 128, 0.287);
 }
+
+#content {
+    background-image: url('../../assets/content-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 100%;
+}

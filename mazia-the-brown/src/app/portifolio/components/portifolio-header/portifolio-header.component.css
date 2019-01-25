@@ -3,6 +3,11 @@
     width: 100%;
 }
 
+.no-decoration {
+    text-decoration: none;
+    color: white;
+}
+
 .nav-style {
     padding-top: 1rem;
     color: rgb(192, 192, 192);

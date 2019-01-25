@@ -1,15 +1,62 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { PortifolioHeaderComponent, PortifolioContentComponent, PortifolioFooterComponent } from './components';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { PortifolioHeaderComponent, PortifolioFooterComponent } from './components';
 import { PortifolioComponent } from './portifolio.component';
+import { AboutComponent, HomeComponent, ContactComponent, PageNotFoundComponent } from './pages';
+import { GitComponent } from './pages/git/git.component';
 
+const portifolioRoutes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'git',
+    component: GitComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
+  {
+    path: 'portifolio',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
+];
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    RouterModule.forRoot(
+      portifolioRoutes,
+      { enableTracing: true }
+    )
+  ],
   declarations: [
     PortifolioComponent,
     PortifolioHeaderComponent,
-    PortifolioContentComponent,
-    PortifolioFooterComponent
+    PortifolioFooterComponent,
+    AboutComponent,
+    HomeComponent,
+    ContactComponent,
+    GitComponent,
+    PageNotFoundComponent
   ],
   exports: [PortifolioComponent]
 })
