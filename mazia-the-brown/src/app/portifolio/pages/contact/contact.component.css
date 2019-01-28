@@ -1,0 +1,30 @@
+.contact-page {
+    background-color: rgb(207, 0, 52);
+    color: white;
+}
+
+.contact-sect {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.title {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.icons-sect {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.no-decoration {
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+}
+
+.email-text {
+    font-size: 1.5rem;
+}

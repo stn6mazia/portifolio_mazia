@@ -5,16 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { PortifolioHeaderComponent, PortifolioFooterComponent } from './components';
 import { PortifolioComponent } from './portifolio.component';
 import { AboutComponent, HomeComponent, ContactComponent, PageNotFoundComponent } from './pages';
-import { GitComponent } from './pages/git/git.component';
 
 const portifolioRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'git',
-    component: GitComponent
   },
   {
     path: 'about',
@@ -55,7 +50,6 @@ const portifolioRoutes: Routes = [
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    GitComponent,
     PageNotFoundComponent
   ],
   exports: [PortifolioComponent]
